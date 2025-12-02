@@ -16,7 +16,7 @@ This project is a simple and complete crypto futures trading bot built for the B
 
 ---
 
-## 🚀 Running the Bot
+<img width="989" height="1393" alt="Screenshot 2025-12-03 003056" src="https://github.com/user-attachments/assets/02daa8a5-3439-4f4e-b80e-1edd838b29f4" />
 
 ### Start the Dashboard
 
