@@ -48,16 +48,3 @@ Open your browser and start trading! 🎉
 - ⏳ **Pending** - Order status updates
 
 ---
-
-## 📊 API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/orders` | POST | Place new order |
-| `/api/orders/<id>` | DELETE | Cancel order |
-| `/api/orders` | GET | Get order history |
-| `/api/account` | GET | Account details |
-| `/api/ticker/<symbol>` | GET | Live price |
-
----
-
