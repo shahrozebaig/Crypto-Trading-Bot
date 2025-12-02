@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Crypto Trading Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark">
+<nav class="navbar">
+    <div class="nav-title">Crypto Trading Dashboard</div>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+</nav>
+<div class="dashboard">
+    <section class="card full">
+        <h2>Place Order</h2>
+        <form id="orderForm" class="form">
+            <div class="grid-3">
+                <div class="form-group">
+                    <label>Symbol</label>
+                    <input id="symbol" type="text" value="BTCUSDT">
+                </div>
+                <div class="form-group">
+                    <label>Side</label>
+                    <select id="side">
+                        <option>BUY</option>
+                        <option>SELL</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Order Type</label>
+                    <select id="orderType">
+                        <option value="MARKET">Market</option>
+                        <option value="LIMIT">Limit</option>
+                        <option value="STOP">Stop-Limit</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid-3">
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input id="qty" type="number" step="any" value="0.001">
+                    <div id="qtyWarning" class="warning"></div>
+                    <div id="minQtyLabel" class="min-label"></div>
+                </div>
+                <div class="form-group hidden" id="priceRow">
+                    <label>Limit Price</label>
+                    <input id="price" type="number" step="any">
+                </div>
+                <div class="form-group hidden" id="stopRow">
+                    <label>Stop Price</label>
+                    <input id="stop_price" type="number" step="any">
+                </div>
+            </div>
+            <button type="button" id="submitBtn" class="btn-submit">Place Order</button>
+        </form>
+    </section>
+    <section class="card full">
+        <h2>Market Data</h2>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="orderbook">Order Book</button>
+            <button class="tab-btn" data-tab="trades">Recent Trades</button>
+            <button class="tab-btn" data-tab="logs">Order Logs</button>
+        </div>
+        <div class="tab-content">
+            <div id="orderbook" class="tab active">
+                <div id="orderBookBox" class="scroll-box"></div>
+            </div>
+            <div id="trades" class="tab">
+                <div id="tradesBox" class="scroll-box"></div>
+            </div>
+            <div id="logs" class="tab">
+                <pre id="resultBox" class="scroll-box"></pre>
+            </div>
+        </div>
+    </section>
+    <section class="card full">
+        <h2>Order History</h2>
+        <table id="orderHistory" class="history-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Side</th>
+                    <th>Symbol</th>
+                    <th>Qty</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <section class="card full">
+        <h2>Live Price</h2>
+        <div id="livePrice" class="live-price">--</div>
+    </section>
+    <section class="card full">
+        <h2>Chart</h2>
+        <div id="tv_chart_container" class="chart-box"></div>
+    </section>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<audio id="orderSound" src="notify.mp3"></audio>
+<script src="script.js"></script>
+<script src="https://s3.tradingview.com/tv.js"></script>
+</body>
+</html>
